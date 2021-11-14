@@ -24,6 +24,9 @@ $(top_builddir)/common/libcommon.la: dummy
 # be built before anything else
 nut-scanner.c: $(top_builddir)/include/nut_version.h
 
+# Make sure this file is dist'ed even if nut_version.h is not resolved:
+EXTRA_DIST = nut-scanner.c
+
 LINKED_SOURCE_FILES =
 
 # Separate the .deps of other dirs from this one

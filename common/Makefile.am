@@ -11,6 +11,9 @@ libparseconf_la_SOURCES = parseconf.c
 # be built before anything else
 common.c: $(top_builddir)/include/nut_version.h
 
+# Make sure this file is dist'ed even if nut_version.h is not resolved:
+EXTRA_DIST = common.c
+
 $(top_builddir)/include/nut_version.h:
 	@cd $(@D) && $(MAKE) $(AM_MAKEFLAGS) $(@F)
 
